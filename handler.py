@@ -18,7 +18,7 @@ locations = {
 }
 
 def upload_csv(df, key):
-    filename = f'/tmp/{key.split(\"/\")[-1]}'
+    filename = f"/tmp/{key.split('/')[-1]}"
     df.to_csv(filename, index=False)
     s3.upload_file(filename, bucket, key)
 
